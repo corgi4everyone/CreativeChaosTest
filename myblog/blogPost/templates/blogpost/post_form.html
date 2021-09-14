@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+      <form  method="POST" action="">
+        
+        <div class="form-group p-5">
+          {% csrf_token %}
+
+          <p class="text-danger">Please choose catagory first</p>
+          
+          
+          <label for="catagory">Catagory</label>
+
+          <div class="overflow-auto rounded" style="height: auto;">         
+            {% for catagory in form.catagory %}
+              {{catagory}} &nbsp <a href="" >remove</a> <br>
+            {% endfor %}
+          </div>
+
+          <a class="btn btn-info" href="{% url 'createCatagory' %}" >add catagory</a>
+          <hr>
+
+          <label for="title">Title</label>
+          {{form.title}}
+
+          <hr>
+  
+          <label for="title_tag">Title tag</label>
+          {{form.title_tag}}
+
+          <hr>
+
+          <label for="author">Author</label>
+          {{form.author}}
+
+          <hr>
+
+
+          <label for="body">Body</label>
+          {{form.body}} 
+
+
+
+          <input class="btn btn-sm btn-info" type="submit" value="Submit">
+        </div>
+          
+          
+            
+          
+        
+      </form>
+
+
+
+ 
+
+
+
+
+{% endblock %}
+

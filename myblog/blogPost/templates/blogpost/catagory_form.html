@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+      <form  method="POST" action="">
+        
+        <div class="form-group p-5">
+          {% csrf_token %}
+
+            {{form.as_p}}
+
+
+
+          <input class="btn btn-sm btn-info" type="submit" value="Submit">
+        </div>
+          
+          
+            
+          
+        
+      </form>
+
+
+
+ 
+
+
+
+
+{% endblock %}
+
